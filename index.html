@@ -950,7 +950,7 @@ function setOnco(i){
 }
 let oncoAuto = setInterval(()=>{ setOnco((oncoIndex+1)%oncoFrames.length); }, 4200);
 document.getElementById('oncoRow').addEventListener('mouseenter', ()=>clearInterval(oncoAuto));
-const IMAGES_MUNDIAL = [
+window.IMAGES_MUNDIAL = [
   {src:"assets/images/img_0102.jpg", alt:"Tur.com — Paisajes Cup 2026, portada"},
   {src:"assets/images/img_0103.jpg", alt:"Tur.com — Paisajes Cup 2026, lámina 1"},
   {src:"assets/images/img_0104.jpg", alt:"Tur.com — Paisajes Cup 2026, lámina 2"},
