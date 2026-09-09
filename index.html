@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -950,7 +951,7 @@ function setOnco(i){
 }
 let oncoAuto = setInterval(()=>{ setOnco((oncoIndex+1)%oncoFrames.length); }, 4200);
 document.getElementById('oncoRow').addEventListener('mouseenter', ()=>clearInterval(oncoAuto));
-window.IMAGES_MUNDIAL = [
+const IMAGES_MUNDIAL = [
   {src:"assets/images/img_0102.jpg", alt:"Tur.com — Paisajes Cup 2026, portada"},
   {src:"assets/images/img_0103.jpg", alt:"Tur.com — Paisajes Cup 2026, lámina 1"},
   {src:"assets/images/img_0104.jpg", alt:"Tur.com — Paisajes Cup 2026, lámina 2"},
@@ -1011,45 +1012,8 @@ const PAID_GALLERY = [
 })();
 </script>
 <script>
-(function(){
-  var wrap = document.getElementById('carouselMundial');
-  var dotsWrap = document.getElementById('dotsMundial');
-if(!wrap || !dotsWrap || !window.IMAGES_MUNDIAL) return;
-  var track = wrap.querySelector('.carousel-track');
-  var idx = 0;
-window.IMAGES_MUNDIAL.forEach
-    var slide = document.createElement('div');
-    slide.className = 'cs';
-    var img = document.createElement('img');
-    img.src = item.src;
-    img.alt = item.alt;
-    slide.appendChild(img);
-    track.appendChild(slide);
-  });
- window.IMAGES_MUNDIAL.forEach
-    var dot = document.createElement('div');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', function(){ go(i); });
-    dotsWrap.appendChild(dot);
-  });
-  function go(i){
-   window.IMAGES_MUNDIAL.length
-    track.style.transform = 'translateX(-' + (idx*100) + '%)';
-    dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, di){ d.classList.toggle('active', di === idx); });
-  }
-  var prevBtn = wrap.querySelector('.carousel-arrow.prev');
-  var nextBtn = wrap.querySelector('.carousel-arrow.next');
-  if(prevBtn) prevBtn.addEventListener('click', function(){ go(idx - 1); });
-  if(nextBtn) nextBtn.addEventListener('click', function(){ go(idx + 1); });
-  var tx = null;
-  wrap.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; });
-  wrap.addEventListener('touchend', function(e){
-    if(tx === null) return;
-    var dx = e.changedTouches[0].clientX - tx;
-    if(Math.abs(dx) > 40){ dx < 0 ? go(idx+1) : go(idx-1); }
-    tx = null;
-  });
-})();
+IMAGES_MUNDIAL.forEach(function(item,i){ IMAGES['mundial_'+i] = item.src; });
+initCarousel('carouselMundial','dotsMundial', IMAGES_MUNDIAL.map(function(_,i){ return 'mundial_'+i; }));
 </script>
 </body>
 </html>
