@@ -1014,7 +1014,7 @@ const PAID_GALLERY = [
 (function(){
   var wrap = document.getElementById('carouselMundial');
   var dotsWrap = document.getElementById('dotsMundial');
-  if(!wrap || !dotsWrap || typeof IMAGES_MUNDIAL === 'undefined') return;
+if(!wrap || !dotsWrap || !window.IMAGES_MUNDIAL) return;
   var track = wrap.querySelector('.carousel-track');
   var idx = 0;
   IMAGES_MUNDIAL.forEach(function(item){
