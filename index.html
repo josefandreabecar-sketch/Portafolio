@@ -1033,7 +1033,7 @@ window.IMAGES_MUNDIAL.forEach
     dotsWrap.appendChild(dot);
   });
   function go(i){
-    idx = (i + IMAGES_MUNDIAL.length) % IMAGES_MUNDIAL.length;
+   window.IMAGES_MUNDIAL.length
     track.style.transform = 'translateX(-' + (idx*100) + '%)';
     dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, di){ d.classList.toggle('active', di === idx); });
   }
