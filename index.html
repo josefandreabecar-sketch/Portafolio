@@ -1017,7 +1017,7 @@ const PAID_GALLERY = [
 if(!wrap || !dotsWrap || !window.IMAGES_MUNDIAL) return;
   var track = wrap.querySelector('.carousel-track');
   var idx = 0;
-  IMAGES_MUNDIAL.forEach(function(item){
+window.IMAGES_MUNDIAL.forEach
     var slide = document.createElement('div');
     slide.className = 'cs';
     var img = document.createElement('img');
@@ -1026,7 +1026,7 @@ if(!wrap || !dotsWrap || !window.IMAGES_MUNDIAL) return;
     slide.appendChild(img);
     track.appendChild(slide);
   });
-  IMAGES_MUNDIAL.forEach(function(_, i){
+ window.IMAGES_MUNDIAL.forEach
     var dot = document.createElement('div');
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', function(){ go(i); });
